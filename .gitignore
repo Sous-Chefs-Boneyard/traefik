@@ -2,6 +2,14 @@
 /cookbooks
 
 # Bundler
+Berksfile.lock
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+
 bin/*
 .bundle/*
 
