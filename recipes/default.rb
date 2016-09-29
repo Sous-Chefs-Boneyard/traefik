@@ -16,3 +16,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+include_recipe "traefik::install"
+
+traefik_config node['traefik']['config_file'] do
+  content node['traefik']['config']
+end
