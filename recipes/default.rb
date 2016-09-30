@@ -16,8 +16,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe "traefik::install"
+include_recipe 'traefik::install'
+include_recipe 'traefik::service'
+
+directory ::File.dirname(node['traefik']['config_file']) do
+  owner 'root'
+  group 'root'
+  mode 00755
+  recursive true
+  action :create
+end
 
 traefik_config node['traefik']['config_file'] do
-  content node['traefik']['config']
+  config node['traefik']['config']
 end
