@@ -31,4 +31,5 @@ end
 
 traefik_config node['traefik']['config_file'] do
   config node['traefik']['config']
+  notifies :restart, 'service[traefik]' if resource_exists('service[traefik]')
 end
