@@ -16,6 +16,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+chef_gem 'toml-rb'
+
 include_recipe 'traefik::install'
 include_recipe 'traefik::service'
 
