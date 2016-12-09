@@ -18,4 +18,5 @@ end
 service 'traefik' do
   supports :status => true, :restart => true
   action :nothing
+  subscribes :restart, 'remote_file[traefik]'
 end
