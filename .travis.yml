@@ -1,0 +1,31 @@
+sudo: required
+dist: trusty
+
+addons:
+  apt:
+    sources:
+      - chef-current-trusty
+    packages:
+      - chefdk
+
+services:
+  - docker
+
+env:
+  - INSTANCE=default-ubuntu-1604
+  - INSTANCE=default-centos-7
+
+install: true
+
+before_script:
+  - chef gem install kitchen-dokken
+
+script: kitchen test ${INSTANCE}
+
+matrix:
+  include:
+    - before_script: true
+      script:
+      - cookstyle -D
+      - foodcritic --exclude test .
+      env: UNIT_AND_LINT=1
