@@ -21,7 +21,7 @@ platforms:
       pid_one_command: /bin/systemd
       intermediate_instructions:
       - RUN /usr/bin/apt-get update && /usr/bin/apt-get install -y apt-transport-https net-tools && rm -r /var/cache/apt /var/lib/apt/lists
-  - name: centos-7.2
+  - name: centos-7
     driver:
       image: centos:7
       privileged: true
