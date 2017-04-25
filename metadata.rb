@@ -10,3 +10,5 @@ issues_url 'https://github.com/redguide/traefik/issues' if respond_to?(:issues_u
 source_url 'https://github.com/redguide/traefik' if respond_to?(:source_url)
 
 depends 'systemd'
+
+gem 'toml', '~> 0.1.2'

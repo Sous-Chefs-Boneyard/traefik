@@ -15,6 +15,6 @@ end
 action :create do
   require 'toml'
   converge_if_changed do
-    ::IO.write(path, ::TOML.dump(config))
+    ::IO.write(path, ::TOML::Generator.new(config).body)
   end
 end
