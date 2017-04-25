@@ -1,4 +1,4 @@
-default['traefik']['install']['version'] = '1.1.1'
+default['traefik']['install']['version'] = '1.2.3'
 default['traefik']['install']['install_method'] = 'binary'
 
 default['traefik']['install']['binary']['version'] = node['traefik']['install']['version']
