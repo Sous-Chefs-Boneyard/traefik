@@ -5,9 +5,11 @@ systemd_service 'traefik' do
     wanted_by 'multi-user.target'
   end
   service do
+    type 'notify'
     exec_start lazy { "#{node['traefik']['service']['path']} --configFile=#{node['traefik']['config_file']}" }
     restart 'always'
     private_tmp true
+    watchdog_sec '1s'
   end
   notifies :enable, 'service[traefik]', :immediately
   notifies :start, 'service[traefik]'
