@@ -10,6 +10,7 @@ systemd_service 'traefik' do
     restart 'always'
     private_tmp true
     watchdog_sec '1s'
+    limit_nofile '20480:30720'
   end
   notifies :enable, 'service[traefik]', :immediately
   notifies :start, 'service[traefik]'
