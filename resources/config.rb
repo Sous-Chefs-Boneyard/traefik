@@ -4,17 +4,17 @@ property :config, Hash, required: true
 default_action :create
 
 load_current_value do
-  require 'toml'
+  require 'toml-rb'
   if ::File.exist?(path)
-    config ::TOML.load_file(path)
+    config ::TomlRB.load_file(path)
   else
     current_value_does_not_exist!
   end
 end
 
 action :create do
-  require 'toml'
+  require 'toml-rb'
   converge_if_changed do
-    ::IO.write(path, ::TOML::Generator.new(config).body)
+    ::IO.write(path, ::TomlRB.dump(config))
   end
 end

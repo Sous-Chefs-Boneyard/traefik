@@ -16,4 +16,4 @@ supports 'ubuntu'
 
 depends 'systemd'
 
-gem 'toml', '~> 0.1.2'
+gem 'toml-rb', '~> 1.0.0'
