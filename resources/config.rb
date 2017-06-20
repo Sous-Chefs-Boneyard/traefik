@@ -15,6 +15,6 @@ end
 action :create do
   require 'toml-rb'
   converge_if_changed do
-    ::IO.write(path, ::TomlRB::Generator.new(config).body)
+    ::IO.write(path, ::TomlRB.dump(config))
   end
 end
