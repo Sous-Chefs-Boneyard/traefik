@@ -16,4 +16,4 @@ supports 'ubuntu'
 
 depends 'systemd'
 
-gem 'toml-rb', '~> 1.0.0'
+gem 'toml-rb', '~> 1.0.0' if respond_to?(:gem)
