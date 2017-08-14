@@ -14,6 +14,6 @@ source_url 'https://github.com/redguide/traefik' if respond_to?(:source_url)
 supports 'centos'
 supports 'ubuntu'
 
-depends 'systemd'
+depends 'systemd', '~> 2.1.3'
 
 gem 'toml-rb', '~> 1.0.0' if respond_to?(:gem)
