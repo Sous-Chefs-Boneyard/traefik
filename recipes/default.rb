@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: traefik
+# Cookbook:: traefik
 # Recipe:: default
 #
-# Copyright 2016 The Authors
+# Copyright:: 2016 The Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ include_recipe 'traefik::service'
 directory ::File.dirname(node['traefik']['config_file']) do
   owner 'root'
   group 'root'
-  mode 00755
+  mode '755'
   recursive true
   action :create
 end

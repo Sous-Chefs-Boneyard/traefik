@@ -14,7 +14,7 @@ systemd_service 'traefik' do
   end
   notifies :enable, 'service[traefik]', :immediately
   notifies :start, 'service[traefik]'
-  only_if { ::File.open('/proc/1/comm').gets.chomp == 'systemd' } # systemd
+  only_if { node['init_package'] == 'systemd' } # systemd
   not_if { node['traefik']['service']['path'].empty? }
 end
 
