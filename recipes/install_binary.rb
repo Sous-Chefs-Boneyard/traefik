@@ -1,4 +1,3 @@
-
 remote_file 'traefik' do
   path node['traefik']['install']['binary']['path']
   source node['traefik']['install']['binary']['url']

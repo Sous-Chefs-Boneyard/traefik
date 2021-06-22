@@ -1,7 +1,7 @@
+unified_mode true
+
 property :path, String, name_property: true
 property :config, Hash, required: true
-
-default_action :create
 
 load_current_value do
   require 'toml-rb'
